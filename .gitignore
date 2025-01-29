@@ -4,3 +4,8 @@
 
 # Ignore executables
 main
+
+# Ignore Rust/Cargo specific files
+target/
+**/*.rs.bk
+Cargo.lock
