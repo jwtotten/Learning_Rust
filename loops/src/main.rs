@@ -62,4 +62,9 @@ fn main() {
         println!("the value is: {element}");
     }
 
+    // Using a for loop on a range
+    for number in (1..4).rev() {
+        println!("{number}!");
+    }
+    println!("LIFTOFF!!!");
 }
