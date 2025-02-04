@@ -55,4 +55,11 @@ fn main() {
         index += 1;
     }
 
+    // adding for loop example
+    let a = [10, 20, 30, 40, 50];
+
+    for element in a {
+        println!("the value is: {element}");
+    }
+
 }
