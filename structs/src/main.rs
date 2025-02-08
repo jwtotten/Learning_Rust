@@ -28,6 +28,14 @@ fn main() {
     let user3 = build_user(String::from("anewemail.com"), String::from("anotherusername"));
     println!("User3: {}", user3.username);
     println!("User3: {}", user3.email);
+
+    println!("__________________________");
+    let user4 = User {
+        email: String::from("wowanotheremail.com"),
+        ..user3 // use struct update syntax to copy the rest of the fields from user3
+    };
+    println!("User4: {}", user4.username);
+    println!("User4: {}", user4.email);
 }
 
 struct User {
