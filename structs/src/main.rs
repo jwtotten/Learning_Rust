@@ -23,6 +23,11 @@ fn main() {
 
     user2.email = String::from("anotheremail@example.com"); // update field as user2 is mutable
     println!("User2: {}", user2.email);
+
+    println!("__________________________");
+    let user3 = build_user(String::from("anewemail.com"), String::from("anotherusername"));
+    println!("User3: {}", user3.username);
+    println!("User3: {}", user3.email);
 }
 
 struct User {
@@ -30,4 +35,13 @@ struct User {
     username: String,
     email: String,
     sign_in_count: u64,
+}
+
+fn build_user(email: String, username: String) -> User {
+    User {
+        email,
+        username,
+        active: true,
+        sign_in_count: 1,
+    }
 }
