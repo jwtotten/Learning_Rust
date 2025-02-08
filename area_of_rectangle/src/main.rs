@@ -14,6 +14,18 @@ fn main() {
     println!("rect1 is {:#?}", rect1);
     println!{"____________________________________________________"};
     println!("The area of the rectangle is {} square pixels.", area(&rect1));
+
+    println!{"____________________________________________________"};
+
+    let scale = 3;
+    let rect2 = Rectangle{
+        width: dbg!(30 * scale),
+        height: 50,
+    };
+
+    dbg!{&rect2};
+    println!("The area of the rectangle is {} square pixels.", area(&rect2));
+
 }
 
 fn area(rectangle: &Rectangle) -> u32 {
