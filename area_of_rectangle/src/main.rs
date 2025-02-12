@@ -8,8 +8,9 @@ impl Rectangle {
     fn area(&self) -> u32 {
         self.width * self.height
     }
-    fn can_hold(&self, other_rectangle: Rectangle) -> bool {
-        self.width > other_rectangle.width && self.height > other_rectangle.height
+
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.width > other.width && self.height > other.height
     }
 }
 
@@ -35,11 +36,7 @@ fn main() {
         rect1.area()
     );
 
-    println!("Checking if rect 2 can fit within rect 1: {}", rect1.can_hold(rect2));
-    // At this point, rect1 has an immutable borrow of rect2. 
-    // This means that rect2 is dropped as it goes out of scope after 
-    // rect1 finished the can_hold method call.
+    println!("Checking if rect 2 can fit within rect 1: {}", rect1.can_hold(&rect2));
     println!("Accessing rect2's area: {}", rect2.area());
-    // The above line of code should throw a compliation error.
-    println!("Checking if rect 3 can fit within rect 2: {}", rect1.can_hold(rect3));
+    println!("Checking if rect 3 can fit within rect 2: {}", rect1.can_hold(&rect3));
 }
