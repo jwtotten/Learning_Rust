@@ -1,21 +1,14 @@
 #[derive(Debug)]
 enum IpAddrKind {
-    V4,
-    V6
-}
-
-struct IpAddr {
-    kind: IpAddrKind,
-    address: String,
+    V4(String),
+    V6(String),
 }
 
 fn main() {
 
-    let home = IpAddr {
-        kind: IpAddrKind::V4,
-        address: String::from("192.168.0.0"),
-    };
+    let home = IpAddrKind::V4(String::from("192.168.0.0"));
+    let loopback = IpAddrKind::V6(String::from("::1"));
 
-    println!("Home IP address: {}", home.address);
-    println!("Home IP address kind: {:#?}", home.kind);
+    println!("Home IP address: {:#?}", home);
+    println!("Loopback IP address: {:#?}", loopback);
 }
