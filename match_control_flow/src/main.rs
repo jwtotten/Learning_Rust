@@ -27,4 +27,10 @@ fn value_in_cents(coin: Coin) -> u8 {
 fn main() {
     let coin = Coin::Quarter(UsState::Alaska);
     println!("The value of the coin is: {}", value_in_cents(coin));
+
+    let config_max = Some(3u8);
+    if let Some(max) = config_max {
+        println!("The maximum is configured to be {max}");
+    }
+
 }
